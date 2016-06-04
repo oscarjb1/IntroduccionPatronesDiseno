@@ -1,0 +1,41 @@
+<Project name="Departamento de 3 pisos">  
+    <Activities name="Supervisión de Arqutectura" price="160000.0">  
+        <responsible name="Oscar Blancarte" price="1500.0" />  
+        <Activities name="Primera planta" price="150000.0">  
+            <responsible name="Juan Perez" price="1300.0" />  
+            <Activities name="Obra negra" price="40000.0">  
+                <responsible name="Alejandro Lopez" price="300.0" />  
+            </Activities>  
+            <Activities name="Obra gris" price="30000.0">  
+                <responsible name="Vladimir Torres" price="300.0" />  
+            </Activities>  
+            <Activities name="Acabados" price="70000.0">  
+                <responsible name="Sofia Galindo" price="300.0" />  
+            </Activities>  
+        </Activities>  
+        <Activities name="Segunda planta" price="160000.0">  
+            <responsible name="Liliana Castro" price="1000.0" />  
+            <Activities name="Obra negra" price="50000.0">  
+                <responsible name="Laura Sanchez" price="1000.0" />  
+            </Activities>  
+            <Activities name="Obra gris" price="40000.0">  
+                <responsible name="Alejandro Lopez" price="300.0" />  
+            </Activities>  
+            <Activities name="Acabados" price="80000.0">  
+                <responsible name="Sofia Galindo" price="300.0" />  
+            </Activities>  
+        </Activities>  
+        <Activities name="Tercera planta" price="200000.0">  
+            <responsible name="Juan Perez" price="1300.0" />  
+            <Activities name="Obra negra" price="50000.0">  
+                <responsible name="Laura Sanchez" price="1000.0" />  
+            </Activities>  
+            <Activities name="Obra gris" price="40000.0">  
+                <responsible name="Vladimir Torres" price="300.0" />  
+            </Activities>  
+            <Activities name="Acabados" price="80000.0">  
+                <responsible name="Sofia Galindo" price="300.0" />  
+            </Activities>  
+        </Activities>  
+    </Activities>  
+</Project>  

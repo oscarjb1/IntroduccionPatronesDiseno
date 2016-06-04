@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Users>
+    <User userName='oblancarte' rol='Admin' password='1234' />
+    <User userName='jperez' rol='Cajero' password='2345' />
+    <User userName='fsuarez' rol='Supervisor' password='3456' />
+</Users>

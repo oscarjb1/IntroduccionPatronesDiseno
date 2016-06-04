@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Reverse engineered AbstractFactory 2015.02.27 18-26-11-184">
+  <ClassDiagramComponents>
+    <Interface xPosition="345.0" yPosition="16.0" package="oscarblancarte.ipd.abstractfactory.impl" name="IServiceStackAbstractFactory" visibility="public">
+      <Methods>
+        <Method name="getEmployeeService" visibility="public" returnType="IEmployeeService"/>
+        <Method name="getProductsService" visibility="public" returnType="IProductsService"/>
+      </Methods>
+    </Interface>
+    <Class xPosition="711.0" yPosition="16.0" package="oscarblancarte.ipd.abstractfactory.impl" name="ServiceStackAbstractFactory" visibility="public">
+      <Constructors>
+        <Constructor name="ServiceStackAbstractFactory" visibility="public"/>
+      </Constructors>
+      <Fields>
+        <Field name="serviceFactory" visibility="private" type="IServiceStackAbstractFactory"/>
+      </Fields>
+      <Methods>
+        <Method name="getEmployeeService" visibility="public" returnType="IEmployeeService"/>
+        <Method name="getProductsService" visibility="public" returnType="IProductsService"/>
+      </Methods>
+    </Class>
+    <Class xPosition="41.0" yPosition="470.0" package="oscarblancarte.ipd.abstractfactory.rest" name="EmployeeServiceRestImpl" visibility="public">
+      <Constructors/>
+      <Fields>
+        <Field name="EMPLOYEES" visibility="private" type="String[]" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Methods>
+        <Method name="getEmployee" visibility="public" returnType="String[]"/>
+      </Methods>
+    </Class>
+    <Class xPosition="320.0" yPosition="420.0" package="oscarblancarte.ipd.abstractfactory.rest" name="ProductServiceRestImpl" visibility="public">
+      <Constructors/>
+      <Fields>
+        <Field name="PRODUCTS" visibility="private" type="String[]" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Methods>
+        <Method name="getProducts" visibility="public" returnType="String[]"/>
+      </Methods>
+    </Class>
+    <Class xPosition="620.0" yPosition="420.0" package="oscarblancarte.ipd.abstractfactory.rest" name="RestServiceStackImpl" visibility="public">
+      <Constructors/>
+      <Fields/>
+      <Methods>
+        <Method name="getEmployeeService" visibility="public" returnType="IEmployeeService"/>
+        <Method name="getProductsService" visibility="public" returnType="IProductsService"/>
+      </Methods>
+    </Class>
+    <Interface xPosition="920.0" yPosition="420.0" package="oscarblancarte.ipd.abstractfactory.service" name="IEmployeeService" visibility="public">
+      <Methods>
+        <Method name="getEmployee" visibility="public" returnType="String[]"/>
+      </Methods>
+    </Interface>
+    <Interface xPosition="478.0" yPosition="580.0" package="oscarblancarte.ipd.abstractfactory.service" name="IProductsService" visibility="public">
+      <Methods>
+        <Method name="getProducts" visibility="public" returnType="String[]"/>
+      </Methods>
+    </Interface>
+    <Class xPosition="620.0" yPosition="820.0" package="oscarblancarte.ipd.abstractfactory.ws" name="EmployeeServiceWSImpl" visibility="public">
+      <Constructors/>
+      <Fields>
+        <Field name="EMPLOYEES" visibility="private" type="String[]" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Methods>
+        <Method name="getEmployee" visibility="public" returnType="String[]"/>
+      </Methods>
+    </Class>
+    <Class xPosition="386.0" yPosition="845.0" package="oscarblancarte.ipd.abstractfactory.ws" name="ProductServiceWSImpl" visibility="public">
+      <Constructors/>
+      <Fields>
+        <Field name="PRODUCTS" visibility="private" type="String[]" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Methods>
+        <Method name="getProducts" visibility="public" returnType="String[]"/>
+      </Methods>
+    </Class>
+    <Class xPosition="896.0" yPosition="671.0" package="oscarblancarte.ipd.abstractfactory.ws" name="WSServiceStackImpl" visibility="public">
+      <Constructors/>
+      <Fields/>
+      <Methods>
+        <Method name="getEmployeeService" visibility="public" returnType="IEmployeeService"/>
+        <Method name="getProductsService" visibility="public" returnType="IProductsService"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="RestServiceStackImpl" target="IServiceStackAbstractFactory"/>
+    <UseRelation source="RestServiceStackImpl" target="IProductsService" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ServiceStackAbstractFactory" target="IProductsService" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="WSServiceStackImpl" target="IEmployeeService" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="WSServiceStackImpl" target="IProductsService" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="ServiceStackAbstractFactory" target="IServiceStackAbstractFactory"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="ProductServiceRestImpl" target="IProductsService"/>
+    <UseRelation source="IServiceStackAbstractFactory" target="IEmployeeService" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="IServiceStackAbstractFactory" target="IProductsService" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="EmployeeServiceWSImpl" target="IEmployeeService"/>
+    <HasRelation name="serviceFactory" source="ServiceStackAbstractFactory" target="ServiceStackAbstractFactory" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="EmployeeServiceRestImpl" target="IEmployeeService"/>
+    <UseRelation source="ServiceStackAbstractFactory" target="IEmployeeService" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="RestServiceStackImpl" target="IEmployeeService" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="WSServiceStackImpl" target="IServiceStackAbstractFactory"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="ProductServiceWSImpl" target="IProductsService"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

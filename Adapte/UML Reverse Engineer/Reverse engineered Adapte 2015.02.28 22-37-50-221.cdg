@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Reverse engineered Adapte 2015.02.28 22-37-50-221">
+  <ClassDiagramComponents>
+    <Class xPosition="35.0" yPosition="350.0" package="oscarblancarte.ipd.adapte.creditapi.bankx" name="XBankCreditAPI" visibility="public">
+      <Constructors/>
+      <Fields/>
+      <Methods>
+        <Method name="sendCreditRequest" visibility="public" returnType="XBankCreditResponse">
+          <Argument type="XBankCreditRequest" name="request"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class xPosition="77.0" yPosition="192.0" package="oscarblancarte.ipd.adapte.creditapi.bankx" name="XBankCreditRequest" visibility="public">
+      <Constructors/>
+      <Fields>
+        <Field name="customerName" visibility="private" type="String"/>
+        <Field name="requestAmount" visibility="private" type="double"/>
+      </Fields>
+      <Methods>
+        <Method name="getCustomerName" visibility="public" returnType="String"/>
+        <Method name="setCustomerName" visibility="public" returnType="void">
+          <Argument type="String" name="customerName"/>
+        </Method>
+        <Method name="getRequestAmount" visibility="public" returnType="double"/>
+        <Method name="setRequestAmount" visibility="public" returnType="void">
+          <Argument type="double" name="requestAmount"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class xPosition="622.0" yPosition="507.0" package="oscarblancarte.ipd.adapte.creditapi.bankx" name="XBankCreditResponse" visibility="public">
+      <Constructors/>
+      <Fields>
+        <Field name="aproval" visibility="public" type="boolean"/>
+      </Fields>
+      <Methods>
+        <Method name="isAproval" visibility="public" returnType="boolean"/>
+        <Method name="setAproval" visibility="public" returnType="void">
+          <Argument type="boolean" name="aproval"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class xPosition="507.0" yPosition="622.0" package="oscarblancarte.ipd.adapte.creditapi.banky" name="YBankCreditApprove" visibility="public">
+      <Constructors/>
+      <Fields>
+        <Field name="name" visibility="public" type="String"/>
+        <Field name="credit" visibility="public" type="float"/>
+      </Fields>
+      <Methods>
+        <Method name="getName" visibility="public" returnType="String"/>
+        <Method name="setName" visibility="public" returnType="void">
+          <Argument type="String" name="name"/>
+        </Method>
+        <Method name="getCredit" visibility="public" returnType="float"/>
+        <Method name="setCredit" visibility="public" returnType="void">
+          <Argument type="float" name="credit"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class xPosition="622.0" yPosition="192.0" package="oscarblancarte.ipd.adapte.creditapi.banky" name="YBankCreditApproveResult" visibility="public">
+      <Constructors/>
+      <Fields>
+        <Field name="approved" visibility="public" type="String"/>
+      </Fields>
+      <Methods>
+        <Method name="getApproved" visibility="public" returnType="String"/>
+        <Method name="setApproved" visibility="public" returnType="void">
+          <Argument type="String" name="approved"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class xPosition="349.0" yPosition="35.0" package="oscarblancarte.ipd.adapte.creditapi.banky" name="YBankCreditSender" visibility="public">
+      <Constructors/>
+      <Fields/>
+      <Methods>
+        <Method name="sendCreditForValidate" visibility="public" returnType="void">
+          <Argument type="YBankCreditApprove" name="request"/>
+          <Argument type="YBankCreditSenderListener" name="listener"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface xPosition="192.0" yPosition="622.0" package="oscarblancarte.ipd.adapte.creditapi.banky" name="YBankCreditSenderListener" visibility="public">
+      <Methods>
+        <Method name="notifyCreditResult" visibility="public" returnType="void">
+          <Argument type="YBankCreditApproveResult" name="result"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Class xPosition="192.0" yPosition="77.0" package="oscarblancarte.ipd.adapte.impl" name="BankCreditRequest" visibility="public">
+      <Constructors/>
+      <Fields>
+        <Field name="customer" visibility="private" type="String"/>
+        <Field name="amount" visibility="private" type="double"/>
+      </Fields>
+      <Methods>
+        <Method name="getCustomer" visibility="public" returnType="String"/>
+        <Method name="setCustomer" visibility="public" returnType="void">
+          <Argument type="String" name="customer"/>
+        </Method>
+        <Method name="getAmount" visibility="public" returnType="double"/>
+        <Method name="setAmount" visibility="public" returnType="void">
+          <Argument type="double" name="amount"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class xPosition="350.0" yPosition="665.0" package="oscarblancarte.ipd.adapte.impl" name="BankCreditResponse" visibility="public">
+      <Constructors/>
+      <Fields>
+        <Field name="approved" visibility="public" type="boolean"/>
+      </Fields>
+      <Methods>
+        <Method name="isApproved" visibility="public" returnType="boolean"/>
+        <Method name="setApproved" visibility="public" returnType="void">
+          <Argument type="boolean" name="approved"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface xPosition="665.0" yPosition="350.0" package="oscarblancarte.ipd.adapte.impl" name="IBankAdapter" visibility="public">
+      <Methods>
+        <Method name="sendCreditRequest" visibility="public" returnType="BankCreditResponse">
+          <Argument type="BankCreditRequest" name="request"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Class xPosition="507.0" yPosition="77.0" package="oscarblancarte.ipd.adapte.impl" name="XBankCreditAdaptee" visibility="public">
+      <Constructors/>
+      <Fields/>
+      <Methods>
+        <Method name="sendCreditRequest" visibility="public" returnType="BankCreditResponse">
+          <Argument type="BankCreditRequest" name="request"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class xPosition="212.0" yPosition="492.0" package="oscarblancarte.ipd.adapte.impl" name="YBankCreditAdaptee" visibility="public">
+      <Constructors/>
+      <Fields>
+        <Field name="yresponse" visibility="private" type="YBankCreditApproveResult"/>
+      </Fields>
+      <Methods>
+        <Method name="sendCreditRequest" visibility="public" returnType="BankCreditResponse">
+          <Argument type="BankCreditRequest" name="request"/>
+        </Method>
+        <Method name="notifyCreditResult" visibility="public" returnType="void">
+          <Argument type="YBankCreditApproveResult" name="result"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="YBankCreditAdaptee" target="YBankCreditApproveResult" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="yresponse" source="YBankCreditAdaptee" target="YBankCreditApproveResult" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="XBankCreditAdaptee" target="IBankAdapter"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="YBankCreditAdaptee" target="IBankAdapter"/>
+    <UseRelation source="XBankCreditAPI" target="BankCreditResponse" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="YBankCreditSender" target="YBankCreditSenderListener" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="YBankCreditAdaptee" target="YBankCreditSenderListener"/>
+    <UseRelation source="YBankCreditAdaptee" target="BankCreditResponse" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="IBankAdapter" target="BankCreditResponse" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="XBankCreditAdaptee" target="BankCreditResponse" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="YBankCreditSenderListener" target="YBankCreditApproveResult" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
