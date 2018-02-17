@@ -94,6 +94,9 @@ public class FileCommand extends BaseCommand {
     }
 
     private String writeNew(String[] args) {
+        if(args.length<2){
+            return "Argumentos inválidos";
+        }
         String filePath = args[0];
         String fileContent = args[1];
 
