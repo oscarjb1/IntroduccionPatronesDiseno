@@ -17,8 +17,8 @@ public class BillingSystem {
     public double pay(BillingPayRequest billingPay) {
         Customer customer = OnMemoryDataBase.findCustomerById(billingPay.getCustomerId());
         customer.setBalance(customer.getBalance() - billingPay.getAmount());
-        System.out.println("Pago aplicado al cliente '"+customer.getName()+"', "
-                + "el nuevo saldo es '"+customer.getBalance()+"'");
+        System.out.println("Payment applied to the client '"+customer.getName()+"', "
+                + "the new balance is '"+customer.getBalance()+"'");
         return customer.getBalance();//new Balance.
     }
 }

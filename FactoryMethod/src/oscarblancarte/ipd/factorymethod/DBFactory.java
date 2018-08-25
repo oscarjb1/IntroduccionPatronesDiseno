@@ -17,7 +17,7 @@ public class DBFactory {
             case Oracle:
                 return new OracleDBAdapter();
             default:
-                throw new IllegalArgumentException("No soportado");
+                throw new IllegalArgumentException("Not supported");
         }
     }
 

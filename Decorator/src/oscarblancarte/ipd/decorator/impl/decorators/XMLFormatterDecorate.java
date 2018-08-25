@@ -37,7 +37,7 @@ public class XMLFormatterDecorate extends MessageDecorator {
             return new TextMessage(new String(output.toByteArray()));
         } catch (Exception e) {
             e.printStackTrace();
-            throw new RuntimeException("Error al convertir el XML");
+            throw new RuntimeException("XML error converting");
         }
     }
 }

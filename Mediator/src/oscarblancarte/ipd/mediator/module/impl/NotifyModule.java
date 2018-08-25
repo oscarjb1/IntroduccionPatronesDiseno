@@ -18,13 +18,13 @@ public class NotifyModule extends AbstractModule {
             case OPERATION_NOTIFY:
                 return notify(message);
             default:
-                throw new RuntimeException("Operación no soportada '"
+                throw new RuntimeException("Operation not supported '"
                         + message.getMessageType() + "'");
         }
     }
 
     private Void notify(ModuleMessage message) {
-        System.out.println("Notificación por EMail enviada");
+        System.out.println("Notification sent");
         return null;
     }
 

@@ -21,7 +21,7 @@ public class BatchCommand extends BaseCommand {
     public void execute(String[] args, OutputStream out) {
 
         if (args == null || args.length < 1) {
-            write(out, "N�mero de parametros invalido");
+            write(out, "Insufficient arguments");
             return;
         }
 
@@ -34,7 +34,7 @@ public class BatchCommand extends BaseCommand {
             command.execute(reduce, out);
             write(out, "\n");
         }
-        write(out, "Batch executado");
+        write(out, "Batch executed");
     }
 
     private String[] readLinesFromFile(String filePath) throws RuntimeException {
@@ -42,7 +42,7 @@ public class BatchCommand extends BaseCommand {
         FileInputStream stream = null;
         try {
             if (!file.exists()) {
-                throw new RuntimeException("Archivo no encotrado");
+                throw new RuntimeException("File not Found");
             }
 
             stream = new FileInputStream(file);

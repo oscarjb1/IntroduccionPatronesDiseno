@@ -2,6 +2,7 @@ package oscarblancarte.ipd.observer;
 
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
+import java.util.Observable;
 import oscarblancarte.ipd.observer.impl.ConfigurationManager;
 import oscarblancarte.ipd.observer.impl.observers.DateFormatObserver;
 import oscarblancarte.ipd.observer.impl.observers.MoneyFormatObserver;
@@ -18,7 +19,7 @@ public class ObserverMain {
         //Se establecen los valores por default.
         conf.setDefaultDateFormat(new SimpleDateFormat("yyyy/MM/dd"));
         conf.setMoneyFormat(new DecimalFormat("##.00"));
-        System.out.println("Configuration establecida");
+        System.out.println("Established configuration");
         
         //Se dan de alta lo observers
         DateFormatObserver dateFormatObserver = new DateFormatObserver();

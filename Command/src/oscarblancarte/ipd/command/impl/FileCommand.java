@@ -18,7 +18,7 @@ public class FileCommand extends BaseCommand {
     @Override
     public void execute(String[] args, OutputStream out) {
         if (args.length < 2) {
-            write(out, "Parametros insuficientes");
+            write(out, "Insufficient parameters");
             return;
         }
 
@@ -36,7 +36,7 @@ public class FileCommand extends BaseCommand {
         } else if (DELETE_FILE.equals(operation)) {
             write(out, deleteFile(reduce));
         } else {
-            write(out, "No se encontro la operacion {" + WRITE_APPEND + "|" + WRITE_NEW + "|" + WRITE_OVERRIDE + "|" + RENAME_FILE + "|DELETE_FILE}");
+            write(out, "Invalid operation {" + WRITE_APPEND + "|" + WRITE_NEW + "|" + WRITE_OVERRIDE + "|" + RENAME_FILE + "|DELETE_FILE}");
         }
     }
 
@@ -60,7 +60,7 @@ public class FileCommand extends BaseCommand {
             File file = new File(filePath);
             if (!file.exists()) {
                 if (!file.createNewFile()) {
-                    return "ERROR: Error al crear el archivo";
+                    return "ERROR: Error creating the file";
                 }
             }
             FileWriter fileW = new FileWriter(file);
@@ -80,7 +80,7 @@ public class FileCommand extends BaseCommand {
         try {
             File file = new File(filePath);
             if (!file.exists()) {
-                return "ERRRO: El archivo no existe";
+                return "ERRRO: File not found";
             }
 
             FileWriter fileW = new FileWriter(file, true);
@@ -95,7 +95,7 @@ public class FileCommand extends BaseCommand {
 
     private String writeNew(String[] args) {
         if(args.length<2){
-            return "Argumentos inválidos";
+            return "Invalid arguments";
         }
         String filePath = args[0];
         String fileContent = args[1];
@@ -103,10 +103,10 @@ public class FileCommand extends BaseCommand {
         try {
             File file = new File(filePath);
             if (file.exists()) {
-                return "ERRRO: El archivo ya existe";
+                return "ERRRO: The file already exists";
             }
             if (!file.createNewFile()) {
-                return "ERROR: No fu� posible crear el archivo";
+                return "ERROR: It was not possible to create the file";
             }
 
             FileWriter fileW = new FileWriter(file);
@@ -123,7 +123,7 @@ public class FileCommand extends BaseCommand {
         String filePath = args[0];
         File file = new File(filePath);
         if (!file.delete()) {
-            return "No fu� posible eliminar el archivo";
+            return "It was not possible to create the file";
         }
 
         return "";

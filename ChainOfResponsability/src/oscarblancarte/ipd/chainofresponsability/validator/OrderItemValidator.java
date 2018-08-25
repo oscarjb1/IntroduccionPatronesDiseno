@@ -17,16 +17,16 @@ public class OrderItemValidator extends AbstractOrderValidator {
         for (OrderItem item : orderItems) {
             Product product = item.getProduct();
             if (item.getQuantity() <= 0) {
-                throw new ValidationException("El producto '" 
-                        + product.getName() + "' no tiene cantidad");
+                throw new ValidationException("The product '" 
+                        + product.getName() + "' has no amount");
             } 
             
             double listPrice = item.getProduct().getListPrice();
             double price = item.getPrice();
             double priceLimit = listPrice - (listPrice*0.20d);
             if(price < priceLimit){
-                throw new ValidationException("El precio del producto '"+
-                        product.getName()+"' sobrepasa el límite permitido");
+                throw new ValidationException("The price of the product '"+
+                        product.getName()+"' exceeds the allowed limit");
             }
         }
     }

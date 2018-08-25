@@ -10,7 +10,7 @@ public class YBankCreditSender {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                System.out.println("yBank recibió su la solicitud en un momento tendrá la respuesta, sea paciente porfavor");
+                System.out.println("yBank received your request in a moment you will have the answer, be patient please");
                 YBankCreditApproveResult response = new YBankCreditApproveResult();
                 if (request.getCredit() <= 1500) {
                     response.setApproved("Y");

@@ -20,14 +20,14 @@ public class ECommerceModule extends AbstractModule {
             case OPERATION_COMPLETE_ORDER:
                 return compleOrder(message);
             default:
-                throw new RuntimeException("Operación no soportada '" + 
+                throw new RuntimeException("Operation not supported '" + 
                         message.getMessageType() + "'");
         }
     }
     
     private String compleOrder(ModuleMessage message){
         SaleOrder saleOrder = (SaleOrder)message.getPayload();
-        System.out.println("Orden completada exitosamente > " );
+        System.out.println("Order completed successfully > " );
         
         ModuleMessage crmMessage = new ModuleMessage(MODULE_NAME, 
                 NotifyModule.MODULE_NAME, NotifyModule.OPERATION_NOTIFY, 

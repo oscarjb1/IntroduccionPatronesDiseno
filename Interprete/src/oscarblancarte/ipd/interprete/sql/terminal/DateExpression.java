@@ -20,7 +20,7 @@ public class DateExpression extends LiteralExpression {
             SimpleDateFormat dateFormat = context.getDateFormat();
             return dateFormat.parse(literal);
         } catch (Exception e) {
-            throw new InterpreteException("Formato de fecha inválida '"+literal+"'");
+            throw new InterpreteException("Invalid date format '"+literal+"'");
         }
     }
 

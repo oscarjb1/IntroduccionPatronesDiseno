@@ -23,7 +23,7 @@ public class DateTimeCommand extends BaseCommand {
             try {
                 dateFormater = new SimpleDateFormat(args[0]);
             } catch (Exception e) {
-                write(out, "formato invalido");
+                write(out, "invalid format");
                 return;
             }
 

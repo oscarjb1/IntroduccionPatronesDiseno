@@ -22,7 +22,7 @@ public class FromExpression implements AbstractSQLExpression {
                 table.interpret(context).toString();
         if(!context.tableExist(tableName)){
             throw new InterpreteException(
-                    "La tabla '"+tableName+"' no existe");
+                    "The table '"+tableName+"' not exist");
         }
         return null;
     }

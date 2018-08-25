@@ -21,7 +21,7 @@ public class BridgeMain {
                 new NoEncryptAlgorithm());
         
         try {
-            final String message = "<Persona><Nombre>Oscar Blancarte</Nombre></Persona>";
+            final String message = "<Person><Name>Oscar Blancarte</Name></Person>";
             String messageAES = aesImpl.encryptMessage(message, "HG58YZ3CR9123456");
             System.out.println("messageAES > " + messageAES + "\n");
             

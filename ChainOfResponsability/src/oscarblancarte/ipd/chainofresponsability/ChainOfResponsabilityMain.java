@@ -56,7 +56,7 @@ public class ChainOfResponsabilityMain {
             AbstractOrderValidator validator
                     = OrderValidatorBuilder.buildSalesOrderValidator();
             validator.validate(salesOrder);
-            System.out.println("Validación exitosa");
+            System.out.println("Successful validation");
         } catch (Exception e) {
             System.err.println(e.getMessage());
             e.printStackTrace();

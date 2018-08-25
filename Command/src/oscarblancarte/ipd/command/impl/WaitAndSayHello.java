@@ -9,7 +9,7 @@ public class WaitAndSayHello extends AsyncCommand {
     @Override
     public void executeOnBackground(String[] args, OutputStream out) {
         if (args == null || args.length < 1) {
-            write(out, "Parametros insuficientes");
+            write(out, "Insufficient parameters");
             return;
         }
 
@@ -17,7 +17,7 @@ public class WaitAndSayHello extends AsyncCommand {
         try {
             time = Long.parseLong(args[0]);
         } catch (Exception e) {
-            write(out, "Tiempo inv�lido");
+            write(out, "Invalid time");
             return;
         }
 

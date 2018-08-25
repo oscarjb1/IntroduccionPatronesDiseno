@@ -28,34 +28,34 @@ public class OnlinePaymentFacadeImpl implements IPaymentFacade {
         Customer customer = crmSystem.findCustomer(request.getCustomerId());
         //Validate Set
         if(customer==null){
-            throw new GeneralPaymentError("El cliente con id '"
-                    +request.getCustomerId()+"' no existe.");
-        }else if("Baja".equals(customer.getStatus())){
-            throw new GeneralPaymentError("El cliente con id '"
-                    +request.getCustomerId()+"' esta dado de baja.");
+            throw new GeneralPaymentError("Customer ID does not exist '"
+                    +request.getCustomerId()+"' not exist.");
+        }else if("Inactive".equals(customer.getStatus())){
+            throw new GeneralPaymentError("Customer ID does not exist '"
+                    +request.getCustomerId()+"' is inactive.");
         }else if(request.getAmmount() > 
                 billingSyste.queryCustomerBalance(customer.getId())){
-            throw new GeneralPaymentError("Se esta intentado realizar un pago "
-                    + "\n\tmayor al saldo del cliente");
+            throw new GeneralPaymentError("You are trying to make a payment "
+                    + "\n\tgreater than the customer's balance");
         }
         
-        //Pago bancario. se realiza el cargo a la tarjeta.
+        //charge to the card
         TransferRequest transfer = new TransferRequest(
                 request.getAmmount(),request.getCardNumber(), 
                 request.getCardName(), request.getCardExpDate(), 
                 request.getCardNumber());
         String payReference = bankSyste.transfer(transfer);
         
-        //Afectación del saldo en el sistema de facturación
+        //Impact of the balance in the billing system
         BillingPayRequest billingRequest = new BillingPayRequest(
                 request.getCustomerId(), request.getAmmount());
         double newBalance = billingSyste.pay(billingRequest);
         
-        //El cliente se reactiva si el nuevo saldo es menor de 51$
+        //The client is reactivated if the new balance is less than $ 51
         String newStatus = customer.getStatus();
         if(newBalance<=50){
-            OnMemoryDataBase.changeCustomerStatus(request.getCustomerId(), "Activo");
-            newStatus = "Activo";
+            OnMemoryDataBase.changeCustomerStatus(request.getCustomerId(), "Active");
+            newStatus = "Active";
         }
         
         //Envio de la confirmación de pago por Email.

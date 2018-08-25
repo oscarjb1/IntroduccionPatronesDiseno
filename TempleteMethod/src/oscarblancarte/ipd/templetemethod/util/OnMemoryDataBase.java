@@ -21,7 +21,7 @@ public class OnMemoryDataBase {
     }
 
     public static void setProcessFile(String fileName) {
-        PROCESS_DOCUMENTS.put(fileName, "Procesado");
+        PROCESS_DOCUMENTS.put(fileName, "Processed");
     }
 
     public static boolean customerExist(int id) {

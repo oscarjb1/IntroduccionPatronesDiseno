@@ -7,7 +7,7 @@ import oscarblancarte.ipd.abstractfactory.service.IProductsService;
  * @see http://www.oscarblancarteblog.com
  */
 public class ProductServiceRestImpl implements IProductsService{
-    private static final String[] PRODUCTS = new String[]{"Teclado","Mouse","Monitor"};
+    private static final String[] PRODUCTS = new String[]{"keyboard","Mouse","Display"};
 
     @Override
     public String[] getProducts() {

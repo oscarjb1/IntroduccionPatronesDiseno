@@ -20,16 +20,16 @@ public class StrategyMain {
         changeAuthetificationStrategy();
         Principal principal = null;
         do {
-            System.out.println("\n\nFavor de autenticarse:");
-            System.out.println("Usuario:");
+            System.out.println("\n\nPlease authenticate:");
+            System.out.println("User:");
             String userName = in.next();
             System.out.println("Pasword:");
             String password = in.next();
 
             principal = authProvider.authenticate(userName, password);
             if (principal == null) {
-                System.out.println("Usuario o password inválido.");
-                System.out.println("¿Desea cambiar el metodo de autentificación? (S/N)");
+                System.out.println("User or password invalid.");
+                System.out.println("Do you want to change the authentication method? (S/N)");
 
                 String op = in.next();
                 if (op.equalsIgnoreCase("S")) {
@@ -38,12 +38,12 @@ public class StrategyMain {
             }
         } while (principal == null);
 
-        System.out.println("Autentificación exitosa");
+        System.out.println("Successful authentication");
         System.out.println(principal);
     }
 
     private static void changeAuthetificationStrategy() {
-        System.out.println("Introdusca el tipo de autentificación a utilizar.");
+        System.out.println("Enter the type of authentication to use.");
         System.out.println("1.-OnMemory Authentication");
         System.out.println("2.-SQL Authentication");
         System.out.println("3.-XML Authentication");
@@ -65,7 +65,7 @@ public class StrategyMain {
                 System.out.println("XML Authentication Select >");
                 break;
             default:
-                System.out.println("Opcion inválida");
+                System.out.println("Invalid option");
                 System.exit(1);
         }
     }

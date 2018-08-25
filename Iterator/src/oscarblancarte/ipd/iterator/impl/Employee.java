@@ -56,7 +56,7 @@ public class Employee implements IContainer<Employee> {
         @Override
         public Employee next() {
             if (!hasNext()) {
-                throw new RuntimeException("No hay mas elementos");
+                throw new RuntimeException("there are no more elements");
             }
             return list.get(index++);
         }

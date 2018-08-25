@@ -15,8 +15,8 @@ public class CreditValidator extends AbstractOrderValidator{
         CreditData creditData = order.getContributor().getCreditData();
         double newBalance = creditData.getBalance() + total;
         if(newBalance > creditData.getCreditLimit()){
-            throw new ValidationException("El monto de la orden excede el "
-                    + "límite de crédito disponible");
+            throw new ValidationException("The amount of the order  "
+                    + "exceeds the available credit limit");
         }
     }
 }

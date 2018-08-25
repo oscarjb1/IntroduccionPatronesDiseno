@@ -22,7 +22,7 @@ public class CRMModule extends AbstractModule {
             case OPERATION_CREATE_ORDER:
                 return createSaleOrder(message);
             default:
-                throw new RuntimeException("Operación no soportada '"
+                throw new RuntimeException("Operation not supported '"
                         + message.getMessageType() + "'");
         }
     }
@@ -30,7 +30,7 @@ public class CRMModule extends AbstractModule {
     private String createSaleOrder(ModuleMessage event) {
         Sale sale = (Sale) event.getPayload();
         String ID = UUID.randomUUID().toString();
-        System.out.println("Orden de venta creada exitosamente");
+        System.out.println("Sales order successfully created");
         final SaleOrder saleOrder = new SaleOrder(ID);
         saleOrder.setProductos(sale.getProductos());
 

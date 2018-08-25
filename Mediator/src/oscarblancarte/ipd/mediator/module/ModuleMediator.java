@@ -25,8 +25,8 @@ public class ModuleMediator {
 
     public Object mediate(ModuleMessage mediateEvent) {
         if (!modules.containsKey(mediateEvent.getTarget())) {
-            throw new RuntimeException("El modulo '"
-                    + mediateEvent.getTarget() + "' no esta registrado");
+            throw new RuntimeException("The module '"
+                    + mediateEvent.getTarget() + "' it's not registered");
         }
         System.out.println("Mediate source > '" + mediateEvent.getSource()
                 + "', target > '" + mediateEvent.getTarget() 

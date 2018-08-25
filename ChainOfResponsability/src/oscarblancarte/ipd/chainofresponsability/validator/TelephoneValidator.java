@@ -14,11 +14,11 @@ public class TelephoneValidator extends AbstractOrderValidator{
         Telephone tel = order.getContributor().getTelephone();
         if(null == tel){
             throw new ValidationException(
-                    "El teléfono del contribuyente es obligatorio");
+                    "The taxpayer's phone is required");
         }else if(tel.getNumber().length()!= 7){
-            throw new ValidationException("Número de teléfono inválido");
+            throw new ValidationException("Invalid phone number");
         }else if(tel.getLada().length()!=3){
-            throw new ValidationException("Lada invalida");
+            throw new ValidationException("Invalid lada");
         }
     }
 }

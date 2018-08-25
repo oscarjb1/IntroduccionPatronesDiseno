@@ -13,6 +13,6 @@ public class NotFoundCommand extends BaseCommand {
 
     @Override
     public void execute(String[] args, OutputStream out) {
-        write(out, "Commando no encontrado");
+        write(out, "Command not found");
     }
 }

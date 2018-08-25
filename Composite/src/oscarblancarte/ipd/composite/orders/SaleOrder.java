@@ -37,8 +37,8 @@ public class SaleOrder {
 
         NumberFormat formater = new DecimalFormat("###,##0.00");
         System.out.println("\\\n============================================="
-                + "\nOrden: " + orderId + "\nCliente: " + customer 
-                + "\nProductos:\n");
+                + "\nOrden: " + orderId + "\nCustomer: " + customer 
+                + "\nProducts:\n");
         for (AbstractProduct prod : products) {
             System.out.println(prod.getName() + "\t\t\t$ " 
                     + formater.format(prod.getPrice()));

@@ -10,7 +10,7 @@ public class SingletonMain {
         
         System.out.println(singletonA);
         System.out.println(singletonB);
-        System.out.println("Misma referencia ==> " + (singletonA == singletonB));
+        System.out.println("Same reference ==> " + (singletonA == singletonB));
         
         singletonA.setAppName("Singleton Pattern");
         singletonB.setAppVersion("1.0x");

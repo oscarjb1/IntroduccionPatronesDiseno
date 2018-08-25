@@ -32,8 +32,8 @@ public abstract class AbstractFileProcessTemplete {
 
     protected void validateProcess() throws Exception {
         String fileStatus = OnMemoryDataBase.getFileStatus(file.getName());
-        if (fileStatus != null && fileStatus.equals("Procesado")) {
-            throw new Exception("El archivo '" + file.getName() + "' ya fue procesado");
+        if (fileStatus != null && fileStatus.equals("Processed")) {
+            throw new Exception("The file '" + file.getName() + "' has already been processed");
         }
     }
 

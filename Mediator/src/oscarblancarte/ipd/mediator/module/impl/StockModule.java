@@ -19,7 +19,7 @@ public class StockModule extends AbstractModule {
             case OPERATION_DECREMENT_STOCK:
                 return decrementStock(message);
             default:
-                throw new RuntimeException("Operación no soportada '"
+                throw new RuntimeException("Operation not supported '"
                         + message.getMessageType() + "'");
         }
     }

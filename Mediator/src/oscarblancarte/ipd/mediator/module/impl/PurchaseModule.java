@@ -18,7 +18,7 @@ public class PurchaseModule extends AbstractModule {
             case OPERATION_PURCHASE_REQUEST:
                 return purchaseRequest(message);
             default:
-                throw new RuntimeException("Operación no soportada '"
+                throw new RuntimeException("Operation not supported '"
                         + message.getMessageType() + "'");
         }
     }

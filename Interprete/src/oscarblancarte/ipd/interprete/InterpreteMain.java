@@ -13,8 +13,8 @@ import oscarblancarte.ipd.interprete.sql.terminal.*;
 public class InterpreteMain {
 
     public static void main(String[] args) {
-        //Arbol Sintactico Abstracto
-        SelectExpression select = complexQuery();
+        //Abstract Syntactic Tree
+        SelectExpression select = getById();
         System.out.println(select.toString());
         Context context = new Context("META-INF/Employee.xls");
         context.setDateFormat(new SimpleDateFormat("dd/MM/yyyy"));
@@ -112,7 +112,7 @@ public class InterpreteMain {
                 new BooleanExpression(
                     new LiteralExpression("STATUS"),
                     new LiteralExpression("="),
-                    new TextExpression("Activo")
+                    new TextExpression("Active")
                 ),
                 new AndExpression(
                     new BooleanExpression(
@@ -124,12 +124,12 @@ public class InterpreteMain {
                         new BooleanExpression(
                             new LiteralExpression("DEPARTMENT"),
                             new LiteralExpression("="),
-                            new TextExpression("Sistemas")
+                            new TextExpression("IT")
                         ),
                         new BooleanExpression(
                             new LiteralExpression("DEPARTMENT"),
                             new LiteralExpression("="),
-                            new TextExpression("Contabilidad")
+                            new TextExpression("Accounting")
                         )
                     )
                 )

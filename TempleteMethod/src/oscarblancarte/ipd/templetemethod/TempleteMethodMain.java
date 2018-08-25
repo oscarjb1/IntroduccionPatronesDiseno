@@ -44,7 +44,7 @@ public class TempleteMethodMain extends TimerTask {
             try {
                 System.out.println("> File found > " + file.getName());
                 new DrugstoreFileProcess(file,LOG_DIR,PROCESS_DIR).execute();
-                System.out.println("Archivo procesado > " + file.getName());
+                System.out.println("Processed file > " + file.getName());
             } catch (Exception e) {
                 System.err.println(e.getMessage());
             }
@@ -60,7 +60,7 @@ public class TempleteMethodMain extends TimerTask {
             try {
                 System.out.println("> File found > " + file.getName());
                 new GroceryFileProcess(file,LOG_DIR,PROCESS_DIR).execute();
-                System.out.println("Archivo procesado > " + file.getName());
+                System.out.println("Processed file > " + file.getName());
             } catch (Exception e) {
                 System.err.println(e.getMessage());
             }

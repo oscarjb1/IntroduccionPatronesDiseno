@@ -87,7 +87,7 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Nombre"/>
+        <Property name="text" type="java.lang.String" value="First name"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="nameTxt">
@@ -98,17 +98,17 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Apellido"/>
+        <Property name="text" type="java.lang.String" value="Last name"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
-        <Property name="text" type="java.lang.String" value="N&#xfa;mero empleado"/>
+        <Property name="text" type="java.lang.String" value="Employee number"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="jButton1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Guardar"/>
+        <Property name="text" type="java.lang.String" value="Save"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="save"/>

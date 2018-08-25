@@ -8,7 +8,7 @@ import oscarblancarte.ipd.abstractfactory.service.IProductsService;
  */
 public class ProductServiceWSImpl implements IProductsService {
 
-    private static final String[] PRODUCTS = new String[]{"Refresco", "Jugo", "Fruta"};
+    private static final String[] PRODUCTS = new String[]{"Soda", "Juice", "Fruit"};
 
     @Override
     public String[] getProducts() {

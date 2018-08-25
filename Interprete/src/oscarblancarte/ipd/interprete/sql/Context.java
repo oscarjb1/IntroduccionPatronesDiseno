@@ -147,6 +147,6 @@ public class Context {
                 return c;
             }
         }
-        throw new RuntimeException("Columna '" + column + "' no existe");
+        throw new RuntimeException("Column '" + column + "' not exist");
     }
 }

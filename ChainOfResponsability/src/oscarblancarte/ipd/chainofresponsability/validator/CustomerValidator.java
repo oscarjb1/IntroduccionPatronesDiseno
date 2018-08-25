@@ -16,7 +16,7 @@ public class CustomerValidator extends AbstractOrderValidator{
         }
         
         if(!(order.getContributor() instanceof Customer)){
-            throw new ValidationException("El contribuyente no es un cliente");
+            throw new ValidationException("The taxpayer is not a client");
         }
     }
 }

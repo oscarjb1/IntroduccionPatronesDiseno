@@ -13,7 +13,7 @@ public class AuthenticationProvider {
     
     public Principal authenticate(String userName, String password){
         if(authenticationStrategy==null){
-            throw new RuntimeException("Estrategia de autenticación no definida");
+            throw new RuntimeException("Strategy not found");
         }
         return authenticationStrategy.authenticate(userName, password);
     }

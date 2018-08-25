@@ -12,8 +12,8 @@ public class PrototypeMain {
 
     public static void main(String[] args) {
         
-        //Creamos la lista de precios inicial, esta tiene los productos con
-        //el precio de lista.
+        //We create the initial price list
+        //This has the products with the list price
         PriceListImpl standarPriceList = 
                 new PriceListImpl("Standar Price List");
         for(int c = 1; c<=5; c++){
@@ -23,8 +23,8 @@ public class PrototypeMain {
         PrototypeFactory.addPrototype(
                 standarPriceList.getListName(), standarPriceList);
         
-        //Segunda lista para clientes de mayoreo a partir de la lista
-        //standar con un 10% de descuento sobre la lista de precio standar
+        //Second list for wholesale customers from the list
+        //standard with a 10% discount on the standard price list.
         PriceListImpl wholesalePriceList = (PriceListImpl)
                 PrototypeFactory.getPrototype("Standar Price List");
         wholesalePriceList.setListName("Wholesale Price List");
@@ -34,8 +34,8 @@ public class PrototypeMain {
         PrototypeFactory.addPrototype(
                 wholesalePriceList.getListName(), wholesalePriceList);
         
-        //Tercera lista de precios para clientes VIP a partir de la lista
-        //de mayoreo con 10% sobre la lista de precios de mayoreo.
+        //Third price list for VIP customers from the list
+        //wholesale with 10% on the wholesale price list.
         PriceListImpl vipPriceList = (PriceListImpl)
                 PrototypeFactory.getPrototype("Wholesale Price List");
         vipPriceList.setListName("VIP Price List");

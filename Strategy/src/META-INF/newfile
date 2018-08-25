@@ -1,0 +1,19 @@
+run:
+Enter the type of authentication to use.
+1.-OnMemory Authentication
+2.-SQL Authentication
+3.-XML Authentication
+2
+SQL Authentication Select >
+
+
+Please authenticate:
+User:
+amedina
+Password:
+2345
+ConnectionString ==> jdbc:mysql://localhost:3306/pos?user=root&password=1234
+Connection class => com.mysql.jdbc.JDBC4Connection
+Successful authentication
+Principal{userName=amedina, rol=Cashier}
+

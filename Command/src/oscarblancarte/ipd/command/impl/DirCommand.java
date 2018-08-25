@@ -16,7 +16,7 @@ public class DirCommand extends BaseCommand {
     @Override
     public void execute(String[] args, OutputStream out) {
         if (args == null || args.length < 2) {
-            write(out, COMMAND_NAME + " argumentos insuficientes");
+            write(out, COMMAND_NAME + " insufficient arguments");
         }
 
         String operation = args[0];
@@ -25,7 +25,7 @@ public class DirCommand extends BaseCommand {
         } else if ("-N".equals(operation.toUpperCase())) {
             write(out, newDir(args[1]));
         } else {
-            write(out, "Se esperaba una operaci�n correcta -d | -n");
+            write(out, "Invalid argument {-d | -n}");
         }
     }
 
@@ -34,11 +34,11 @@ public class DirCommand extends BaseCommand {
         try {
             File file = new File(url);
             if (!file.exists()) {
-                return "El archivo no existe";
+                return "File not found";
             }
 
             if (!file.canWrite()) {
-                return "Privilegios insuficientes";
+                return "Insufficient privileges";
             }
 
             file.delete();
@@ -53,7 +53,7 @@ public class DirCommand extends BaseCommand {
         try {
             File file = new File(url);
             if (file.exists()) {
-                return "El archivo ya existe";
+                return "File not found";
             }
 
             file.mkdirs();

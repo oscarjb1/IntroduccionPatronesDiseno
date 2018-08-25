@@ -21,21 +21,21 @@ public class VisitorMain {
             System.out.println(e.getMessage());
             e.printStackTrace();
         }
-        //Obtener el costo total del proyecto  
+        //Obtain the total cost of the project  
         CostProjectVisitor costVisitor = new CostProjectVisitor();
         project.accept(costVisitor);
         double cost = costVisitor.getResult().doubleValue();
-        System.out.println("Costo total > " + cost);
+        System.out.println("Total cost > " + cost);
 
-        //Obtener el precio de venta del proyecto  
+        //Get the sale price of the project  
         PriceProjectVisitor priceVisitor = new PriceProjectVisitor();
         project.accept(priceVisitor);
         double price = priceVisitor.getResult().doubleValue();
-        System.out.println("Precio total > " + price);
-        System.out.println("Ganancia Total > " + (price - cost));
+        System.out.println("Total price > " + price);
+        System.out.println("Total gain > " + (price - cost));
 
-        //Mistrar el total a pagar por empleado  
-        System.out.println("\n:::::::: Pagar a los trabajadores :::::::");
+        //Show the total to pay per employee 
+        System.out.println("\n:::::::: Pay the workers :::::::");
         PaymentProjectVisitor paymentVisitor
                 = new PaymentProjectVisitor();
         project.accept(paymentVisitor);

@@ -17,7 +17,7 @@ public class ContributorValidator extends AbstractOrderValidator{
         }
         Contributor contributor = order.getContributor();
         if(Status.ACTIVO != contributor.getStatus()){
-            throw new ValidationException("El contribuyente no esta activo");
+            throw new ValidationException("The taxpayer is not active");
         }
     }
 }

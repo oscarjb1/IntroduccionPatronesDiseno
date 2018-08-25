@@ -44,7 +44,7 @@ public class Employee implements Cloneable{
         try {
             return new EmployeeMemento((Employee)this.clone());
         } catch (Exception e) {
-            throw new RuntimeException("Error al clonar el empleado");
+            throw new RuntimeException("Error cloning the employee");
         }
     }
     

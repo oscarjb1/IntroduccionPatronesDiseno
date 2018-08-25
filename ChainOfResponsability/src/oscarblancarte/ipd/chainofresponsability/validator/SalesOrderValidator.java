@@ -12,7 +12,7 @@ public class SalesOrderValidator extends AbstractOrderValidator {
     @Override
     public void validate(AbstractOrder order) throws ValidationException {
         if (!(order instanceof SalesOrder)) {
-            throw new ValidationException("Se esperaba una orden de Venta");
+            throw new ValidationException("A sales order was expected");
         }
 
         for(AbstractOrderValidator validator : validators){

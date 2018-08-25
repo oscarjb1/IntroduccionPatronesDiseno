@@ -13,7 +13,7 @@ import oscarblancarte.ipd.adapter.impl.YBankCreditAdapter;
 public class AdapterMain {
 
     public static void main(String[] args) {
-        //Request generico para las dos API's
+        //Generic request for the two API's
         BankCreditRequest request = new BankCreditRequest();
         request.setCustomer("Oscar Blancarte");
         request.setAmount(1000);
@@ -27,11 +27,11 @@ public class AdapterMain {
         System.out.println("yBank approved > " + yresponse.isApproved() + "\n");
 
         if (xresponse.isApproved()) {
-            System.out.println("xBank aprobó su crédito, felicidades!!");
+            System.out.println("xBank approved your credit, congratulations!!");
         } else if (yresponse.isApproved()) {
-            System.out.println("yBank aprobó su crédito, felicidades!!");
+            System.out.println("yBank approved your credit, congratulations!!");
         } else {
-            System.out.println("lo sentimos su crédito no a sido aprobado");
+            System.out.println("Sorry your credit has not been approved");
         }
     }
 }

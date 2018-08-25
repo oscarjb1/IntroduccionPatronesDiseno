@@ -52,7 +52,7 @@ public class BooleanExpression implements StatementExpression {
                 return cellValue <= rightVal;
             } else {
                 throw new RuntimeException(
-                        "Operador no esperado '" + opr + "'");
+                        "Unexpected operator '" + opr + "'");
             }
         } else if (rightExpression instanceof DateExpression) {
             cell.setCellType(Cell.CELL_TYPE_STRING);
@@ -64,7 +64,7 @@ public class BooleanExpression implements StatementExpression {
                 cellDateLong = date.getTime();
             } catch (Exception e) {
                 throw new InterpreteException(
-                        "Fecha inválida > " + cellValue);
+                        "Invalid date > " + cellValue);
             }
             if (opr.equals("=")) {
                 return cellDateLong == expressionDateLong;
@@ -80,7 +80,7 @@ public class BooleanExpression implements StatementExpression {
                 return cellDateLong <= expressionDateLong;
             } else {
                 throw new RuntimeException(
-                        "Operador no esperado '" + opr + "'");
+                        "Unexpected operator '" + opr + "'");
             }
         } else if (rightExpression instanceof LiteralExpression
                 || rightExpression instanceof TextExpression) {
@@ -109,10 +109,10 @@ public class BooleanExpression implements StatementExpression {
                 return result <= 0;
             } else {
                 throw new RuntimeException(
-                        "Operador no esperado '" + opr + "'");
+                        "Unexpected operator '" + opr + "'");
             }
         } else {
-            throw new RuntimeException("Tipo de celda no soportada " 
+            throw new RuntimeException("Type of cell not supported " 
                     + right.getClass().getSimpleName());
         }
     }

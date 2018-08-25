@@ -18,11 +18,11 @@ public class FlyweightMain {
 
     public static void main(String[] args) {
         System.out.println(""
-            + "Proceso de creación de playlist iniciado,este proceso puede\n"
-            + "ser muy tardado por la gran cantidad de objetos que se \n"
-            + "crearan, por favor espere un momento hasta que se le \n"
-            + "notifique que el proceso ha terminado.");
-        
+            + "Playlist creation process started, this process can be\n"
+            + "very delayed due to the large amount of objects that \n"
+            + "will be created, please wait a moment until you \n"
+            + "are notified that the process has finished.");
+           
         Runtime runtime = Runtime.getRuntime();
         System.out.println("MaxMemory > " + (runtime.maxMemory()/1000000));
         PlayItemFactory.enableFlyweight = true;
@@ -47,8 +47,8 @@ public class FlyweightMain {
             playLists.add(playList);
             if(c!=0 && (c+1)%(playListNames.length/10)==0){
                 p+=10;
-                System.out.println("Compleado "+ p +"%");
-                System.out.println("Listas creadas " + playLists.size());
+                System.out.println("Completed "+ p +"%");
+                System.out.println("Lists created " + playLists.size());
             }
         }
     }

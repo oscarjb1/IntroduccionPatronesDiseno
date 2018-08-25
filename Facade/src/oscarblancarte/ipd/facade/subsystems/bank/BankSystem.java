@@ -13,21 +13,21 @@ public class BankSystem {
     public String transfer(TransferRequest request) throws GeneralPaymentError {
         String cardNumerPrefix = request.getCardNumber().substring(0, 3);
         if (!OnMemoryDataBase.validateCardBins(cardNumerPrefix)) {
-            throw new GeneralPaymentError("Tarjeta inválida.");
+            throw new GeneralPaymentError("Invalid card.");
         }
         String cardCompany = OnMemoryDataBase.getCardCompany(cardNumerPrefix);
         if ("AMEX".equals(cardCompany) && request.getCardNumber().length() != 15) {
-            throw new GeneralPaymentError("El número de la tarjeta es inválido");
+            throw new GeneralPaymentError("Invalid card number");
         } else if (("VISA".equals(cardCompany) || "MASTERCARD".equals(cardCompany))
                 && request.getCardNumber().length() != 16) {
-            throw new GeneralPaymentError("El número de la tarjeta es inválido");
+            throw new GeneralPaymentError("Invalid card number");
         }
         String number = request.getCardNumber();
         String cardNumerSubfix = number.substring(number.length()-4, number.length());
-        System.out.println("Se ha realizado un cargo al cliente '"
+        System.out.println("A charge has been made to the client '"
                 + request.getCardName() + "' \n"
-                + "\tpor el monto de '" + request.getAmmount() + "' a la tarjeta "
-                + "terminación '"+cardNumerSubfix+"'.\n");
+                + "\tFor the amount of '" + request.getAmmount() + "' to the card "
+                + "termination '"+cardNumerSubfix+"'.\n");
         
         return UUID.randomUUID().toString();
     }

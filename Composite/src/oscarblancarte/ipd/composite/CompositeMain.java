@@ -31,22 +31,22 @@ public class CompositeMain {
     private CompositeProduct pc2x1;
 
     private void buildProducts() {
-        //Construcción de productos simples
-        ram4gb = new SimpleProduct("Memoria RAM 4GB", 750, "KingStone");
-        ram8gb = new SimpleProduct("Memoria RAM 8GB", 1000, "KingStone");
-        disk500gb = new SimpleProduct("Disco Duro 500GB", 1500, "ACME");
-        disk1tb = new SimpleProduct("Disco Duro 1TB", 2000, "ACME");
+        //Simple product construction
+        ram4gb = new SimpleProduct("RAM 4GB", 750, "KingStone");
+        ram8gb = new SimpleProduct("RAM 8GB", 1000, "KingStone");
+        disk500gb = new SimpleProduct("HDD 500GB", 1500, "ACME");
+        disk1tb = new SimpleProduct("HDD 1TB", 2000, "ACME");
         cpuAMD = new SimpleProduct("AMD phenon", 4000, "AMD");
         cpuIntel = new SimpleProduct("Intel i7", 4500, "Intel");
-        smallCabinete = new SimpleProduct("Gabinete Pequeno", 2000, "ExCom");
-        bigCabinete = new SimpleProduct("Gabinete Grande", 2200, "ExCom");
-        monitor20inch = new SimpleProduct("Monitor 20'", 1500, "HP");
-        monitor30inch = new SimpleProduct("Monitor 30'", 2000, "HP");
-        simpleMouse = new SimpleProduct("Raton Simple", 150, "Genius");
-        gammerMouse = new SimpleProduct("Raton Gammer", 750, "Alien");
+        smallCabinete = new SimpleProduct("Small cabinet", 2000, "ExCom");
+        bigCabinete = new SimpleProduct("Big Cabinet", 2200, "ExCom");
+        monitor20inch = new SimpleProduct("Display 20'", 1500, "HP");
+        monitor30inch = new SimpleProduct("Display 30'", 2000, "HP");
+        simpleMouse = new SimpleProduct("Simple mouse", 150, "Genius");
+        gammerMouse = new SimpleProduct("Gammer mouse", 750, "Alien");
 
-        //Computadora para Gammer que incluye 8gb de ram,disco de 1tb, procesador Intel i7
-        //gabinete grande,monitor de 30' y un mouse gammer.
+        //Gammer pc with 8gb ram,HDD 1tb, Intel i7 processor
+        //large cabinet,display 30' and one gammer mouse.
         gammerPC = new CompositeProduct("Gammer PC");
         gammerPC.addProduct(ram8gb);
         gammerPC.addProduct(disk1tb);
@@ -55,9 +55,9 @@ public class CompositeMain {
         gammerPC.addProduct(monitor30inch);
         gammerPC.addProduct(gammerMouse);
 
-        //Computadora para Casa que incluye 4gb de ram,disco de 500gb, procesador AMD Phenon
-        //gabinete chico,monitor de 20' y un mouse simple.
-        homePC = new CompositeProduct("Casa PC");
+        //Home PC with RAM 4gb, HDD 500gb, AMD Phenon processor
+        //small Cabinet, dsplay 20' and simple mouse.
+        homePC = new CompositeProduct("Home PC");
         homePC.addProduct(ram4gb);//
         homePC.addProduct(disk500gb);
         homePC.addProduct(cpuAMD);
@@ -65,8 +65,8 @@ public class CompositeMain {
         homePC.addProduct(monitor20inch);
         homePC.addProduct(simpleMouse);
 
-        //Paque compuesto de dos paquetes, El paquete Gammer PC y Home PC
-        pc2x1 = new CompositeProduct("Paquete PC Gammer + Casa");
+        //Package consisting of two packages, Gammer PC + Home PC
+        pc2x1 = new CompositeProduct("Pack PC Gammer + Home PC");
         pc2x1.addProduct(gammerPC);
         pc2x1.addProduct(homePC);
     }
@@ -112,10 +112,10 @@ public class CompositeMain {
         CompositeMain main = new CompositeMain();
         main.buildProducts();
 
-//        main.orderSimpleProducts();
-//        main.orderHomePC();
-//        main.orderGammerPC();
-        main.orderCombo();
-//        main.orderBig();
+        //main.orderSimpleProducts();
+        //main.orderHomePC();
+        //main.orderGammerPC();
+        //main.orderCombo();
+        main.orderBig();
     }
 }

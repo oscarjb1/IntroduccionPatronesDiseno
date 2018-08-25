@@ -30,13 +30,13 @@ public class EmployeeGUI extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Patrón de diseño Memento ");
 
-        jLabel1.setText("Nombre");
+        jLabel1.setText("First name");
 
-        jLabel2.setText("Apellido");
+        jLabel2.setText("Last name");
 
-        jLabel3.setText("Número empleado");
+        jLabel3.setText("Employee number");
 
-        jButton1.setText("Guardar");
+        jButton1.setText("Save");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 save(evt);
@@ -120,14 +120,14 @@ public class EmployeeGUI extends javax.swing.JFrame {
         
         caretaker.addNewMemento(employee.createMemento());
         
-        JOptionPane.showMessageDialog(this, "Estado guardado");
+        JOptionPane.showMessageDialog(this, "Saved state");
     }//GEN-LAST:event_save
 
     private void previous(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_previous
         
         EmployeeMemento menento = caretaker.getPreviousMemento();
         if(menento==null){
-            JOptionPane.showMessageDialog(this, "No existen mas estados");
+            JOptionPane.showMessageDialog(this, "There are no more states");
             return;
         }
         employee.restoreMemento(menento);
@@ -139,7 +139,7 @@ public class EmployeeGUI extends javax.swing.JFrame {
         
         EmployeeMemento memento = caretaker.getNextMemento();
         if(memento==null){
-            JOptionPane.showMessageDialog(this, "No existen mas estados");
+            JOptionPane.showMessageDialog(this, "There are no more states");
             return;
         }
         employee.restoreMemento(memento);

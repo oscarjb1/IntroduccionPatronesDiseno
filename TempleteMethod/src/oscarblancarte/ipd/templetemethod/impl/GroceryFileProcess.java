@@ -21,12 +21,12 @@ public class GroceryFileProcess extends AbstractFileProcessTemplete {
     protected void validateName() throws Exception {
         String fileName = file.getName();
         if (!fileName.endsWith(".gry")) {
-            throw new Exception("Nombre el archivo no valido"
-                    + ", debe terminar con .gry");
+            throw new Exception("Invalid file name"
+                    + ", must end with .gry");
         }
 
         if (fileName.length() != 7) {
-            throw new Exception("El documento no tiene el formato esperado");
+            throw new Exception("Invalid document format");
         }
     }
 
@@ -48,14 +48,14 @@ public class GroceryFileProcess extends AbstractFileProcessTemplete {
                         Integer.parseInt(customer));
                 if (!exist) {
                     log += id + " E" + customer + "\t\t" + date
-                            + " El cliente no existe\n";
+                            + " Customer not exist\n";
                 } else if (amount > 200) {
                     log += id + " E" + customer + "\t\t" + date
-                            + " El monto excede el máximo\n";
+                            + " The amount exceeds the maximum\n";
                 } else {
-                    //TODO Aplicar el pago en algún lugar.
+
                     log += id + " E" + customer + "\t\t" + date
-                            + " Aplicado exitosamente\n";
+                            + " Successfully applied\n";
                 }
             }
         } finally {

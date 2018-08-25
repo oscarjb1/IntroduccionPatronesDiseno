@@ -9,17 +9,17 @@ public class FactoryMain {
 
     public static void main(String[] args) throws SQLException {
         //Creamos los nuevos productos a registrar
-        Product productA = new Product(1L, "Producto A", 100);
-        Product productB = new Product(2L, "Producto B", 100);
+        Product productA = new Product(1L, "Product A", 100);
+        Product productB = new Product(2L, "Product B", 100);
         
-        //Creamos una instancia del DAO
+        //Creation of the DAO instance  
         ProductDAO productDAO = new ProductDAO();
         
-        //Persistimos los productos
+        //Product persist  
         productDAO.saveProduct(productA);
         productDAO.saveProduct(productB);
         
-        //Consultamos nuevamente los productos
+        //Create the products  
         List<Product> products = productDAO.findAllProducts();
         System.out.println("Product size ==> " + products.size());
         for(Product product : products){

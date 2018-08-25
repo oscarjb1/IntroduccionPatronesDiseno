@@ -21,12 +21,12 @@ public class DrugstoreFileProcess extends AbstractFileProcessTemplete {
     protected void validateName() throws Exception {
         String fileName = file.getName();
         if (!fileName.endsWith(".drug")) {
-            throw new Exception("Nombre el archivo no valido"
-                    + ", debe terminar con .drug");
+            throw new Exception("Invalid file name format"
+                    + ", must end with .drug");
         }
 
         if (fileName.length() != 16) {
-            throw new Exception("El documento no tiene el formato esperado");
+            throw new Exception("Invalid document format");
         }
     }
 
@@ -48,14 +48,14 @@ public class DrugstoreFileProcess extends AbstractFileProcessTemplete {
 
                 if (!exist) {
                     log += id + " E" + customer + "\t\t" + date
-                            + " El cliente no existe\n";
+                            + " Customer not exist\n";
                 } else if (amount > 200) {
                     log += id + " E" + customer + "\t\t" + date
-                            + " El monto excede el máximo\n";
+                            + " The amount exceeds the maximum\n";
                 } else {
                     //TODO Aplicar el pago en algún lugar.
                     log += id + " E" + customer + "\t\t" + date
-                            + " Aplicado exitosamente\n";
+                            + " Successfully applied\n";
                 }
             }
         } finally {

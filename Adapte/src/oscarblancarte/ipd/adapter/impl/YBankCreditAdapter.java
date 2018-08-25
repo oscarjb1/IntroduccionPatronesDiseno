@@ -25,7 +25,7 @@ public class YBankCreditAdapter implements IBankAdapter, YBankCreditSenderListen
         do {
             try {
                 Thread.sleep(10000);
-                System.out.println("yBank peticion en espera....");
+                System.out.println("yBank request on hold....");
             } catch (Exception e) {
                 e.printStackTrace();
             }
