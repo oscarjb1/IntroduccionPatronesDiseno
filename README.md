@@ -7,7 +7,7 @@ This repository contains the Java code, to see C# code go to next URL
 
 
 
-# Introducción a los patrones de diseño
+# Introducción a los patrones de diseño - Español
 
 Este repositorio contiene el código Java, para ver el código C # vaya a la siguiente URL
 
